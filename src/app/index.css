@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1260px;
   margin: 0 auto;
 }
 
@@ -140,6 +140,16 @@ body {
   width: calc(100% - 520px);
 }
 
+.products-custom-prev,
+.products-custom-next {
+  top: auto !important;
+  bottom: 40px !important;
+}
+
+.products-custom-swipper .swiper-slide-active {
+  border: 1px solid #a8c686;
+  border-radius: 24px;
+}
 /* === Modern Normalize (simplified & modernized) === */
 
 /* header*/
@@ -148,7 +158,7 @@ header {
   align-items: center;
   width: calc(100% - 40px);
   margin: 20px;
-  padding: 20px 62px;
+  padding: 20px 70px;
   background: #ffffff;
   border-radius: 30px;
   gap: 30px;

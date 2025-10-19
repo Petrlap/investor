@@ -1,4 +1,10 @@
+import React, { useState } from "react";
 import logo from "../../assets/logo.webp";
+import img1 from "../../assets/products/img-1.webp";
+import img2 from "../../assets/products/img-2.webp";
+import img3 from "../../assets/products/img-3.webp";
+import img4 from "../../assets/products/img-4.webp";
+import img5 from "../../assets/products/img-5.webp";
 import styles from "./Home.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -9,7 +15,50 @@ import YouTubeClean from "../../components/YouTubeCleanProps/YouTubeCleanProps";
 import { GoArrowUpRight } from "react-icons/go";
 import { LuFileDown } from "react-icons/lu";
 
+const items = [
+  {
+    month: "Dec",
+    year: "2025",
+    side: "left",
+    title: "Достижение сбора",
+    percent: "25%",
+    text: "Выбор и приобретение производственной площадки. Получение необходимых разрешений. Подключение инженерных мощностей, водоснабжения и канализации.",
+    status: true,
+  },
+  {
+    month: "Mar",
+    year: "2026",
+    side: "right",
+    title: "Достижение сбора",
+    percent: "25%",
+    text: "Строительные работы. Обустройство производственной площадки.",
+    status: false,
+  },
+  {
+    month: "Jun",
+    year: "2026",
+    side: "left",
+    title: "Достижение сбора",
+    percent: "35%",
+    text: "Покупка, доставка и установка основного и вспомогательного оборудования.",
+    status: false,
+  },
+  {
+    month: "Aug",
+    year: "2026",
+    side: "right",
+    title: "Достижение сбора",
+    percent: "15%",
+    text: "Приобретение необходимого сырья и материалов. Найм и обучение производственного персонала. Начало работы производственного цеха. Сертификация продукции.",
+    status: false,
+  },
+];
+
+const products = [img1, img2, img3, img4, img5, img5];
+
 const Home = () => {
+  const [activeImage, setActiveImage] = useState(img1);
+
   return (
     <div>
       <section className={styles.videoBlock}>
@@ -54,10 +103,247 @@ const Home = () => {
         </div>
         <YouTubeClean videoId="ho2jfFgQVTk" />
       </section>
-      <section></section>
-      <section></section>
-      <section></section>
-      <section></section>
+      <section>
+        <div>
+          <h2>Главные выгоды инвестора</h2>
+          <p>
+            Мы нашли свою нишу на данном рынке для того, чтобы конкурировать с
+            самими собой, а не с наиболее известными компаниями и их всемирно
+            известными брендами на рынке.{" "}
+          </p>
+          <p>
+            Тем самым мы и отстраиваемся от конкурентов вне зависимости от
+            известности их брендов, и повышаем потенциальную прибыль ввиду того,
+            что сырье, которое мы решили использовать для наполнения, является
+            более простым и дешевым в производстве. Тем самым на существующем
+            рынке создаем свой рынок.{" "}
+          </p>
+          <p>
+            Помимо прочего, мы получаем возможность дифференциации по поставкам
+            сырья, не привязываясь только к одной стране (можно догадаться
+            какой). И это дает нам нужную свободу по выбору страны, в которой мы
+            будем строить свое высоко технологичное
+          </p>
+        </div>
+        <div>
+          <div>
+            <img />
+            <p>Инновация на традиционном рынке</p>
+          </div>
+          <div>
+            <img />
+            <p>Гарантированно высокий спрос</p>
+          </div>
+          <div>
+            <img />
+            <p>Расширение проекта в соседних сегментах</p>
+          </div>
+          <div>
+            <img />
+            <p>Перспективность проекта и надежость инвестиций</p>
+          </div>
+          <div>
+            <img />
+            <p>Компетенции руководителя проекта и команды</p>
+          </div>
+        </div>
+      </section>
+      <section className={styles.products}>
+        <div className={styles.productsLeft}>
+          <h2>Продукция</h2>
+          <img src={activeImage} alt="Active product" />
+        </div>
+        <div className={styles.productsRight}>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+          </p>
+          <p className={styles.productsCol}>
+            <span>24+</span>Продуктов
+          </p>
+          <div className="swiper-button-prev products-custom-prev"></div>
+          <div className="swiper-button-next products-custom-next"></div>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={20}
+            slidesPerView={5}
+            navigation={{
+              nextEl: ".products-custom-next",
+              prevEl: ".products-custom-prev",
+            }}
+            loop={true}
+            onSlideChange={(swiper: any) => {
+              const realIndex = swiper.realIndex;
+              setActiveImage(products[realIndex] || img1);
+            }}
+            className={`${styles.productsSwiper} products-custom-swipper`}
+          >
+            <SwiperSlide>
+              <img src={img1} alt="Product 1" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img2} alt="Product 2" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img3} alt="Product 3" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img4} alt="Product 4" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img5} alt="Product 5" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img5} alt="Product 6" />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+      <section className={styles.description}>
+        <h2>
+          Описание<br></br>инвестиционного проекта
+        </h2>
+        <div className={styles.goals}>
+          <div className={styles.goalLeft}>
+            <p className={styles.goalLeftText}>
+              Цель инвестиционного проекта COMFORTA – строительство современной
+              фабрики по производству средств гигиены
+            </p>
+            <p className={styles.goalLeftText}>
+              Планирующаяся к выпуску продукция:
+            </p>
+            <ul className={styles.goalLeftUl}>
+              <li>детские подгузники,</li>
+              <li>детские подгузники-трусики,</li>
+              <li>детские одноразовые пеленки,</li>
+              <li>подгузники-трусики для взрослых,</li>
+              <li>влажные гигиенические платочки для детей,</li>
+              <li>влажные гигиенические платочки для взрослых,</li>
+              <li>средства женской гигиены.</li>
+            </ul>
+            <div className={styles.goalImages}>
+              <img src={img1} alt="Image 1" />
+              <img src={img2} alt="Image 2" />
+              <img src={img3} alt="Image 3" />
+              <img src={img4} alt="Image 4" />
+              <img src={img5} alt="Image 5" />
+              <img src={img5} alt="Image 6" />
+            </div>
+            <p className={styles.goalPreSc}>и еще 18 видов продукции</p>
+            <h4>Документы по проекту</h4>
+            <div className={styles.goalLinks}>
+              <a href="#">
+                <LuFileDown color="#0090FF" />
+                <span>Меморандум</span>
+              </a>
+              <a href="#">
+                <LuFileDown color="#0090FF" />
+                <span>Инвест проект</span>
+              </a>
+              <a href="#">
+                <LuFileDown color="#0090FF" />
+                <span>Бизнес план</span>
+              </a>
+            </div>
+          </div>
+          <div className={styles.goalRight}>
+            <p>Хотите получить документы - пожалуйста, ЗАРЕГИСТРИЙТЕСЬ.</p>
+            <form>
+              <div className={styles.goalRightBox}>
+                <input placeholder="Ваше имя"></input>
+                <input placeholder="Ваш телефон*"></input>
+                <input placeholder="Ваш телеграм"></input>
+                <input placeholder="Ваш E-mail*"></input>
+              </div>
+              <input type="button" value="Зарегистрироваться"></input>
+            </form>
+            <span>Скачайте более подробную презентацию, взамен телефона</span>
+          </div>
+        </div>
+        <h2>Проект имеет 4 основные стадии развития:</h2>
+        <div className={styles.stageLong}>
+          <p className={styles.stageNumber}>0</p>
+          <p className={styles.stageText}>
+            <b>0. стадия</b> заказа нашей продукции на сторонних производствах
+            по заключённым контактам. Примерный срок: 1,5 года (до ввода нашей
+            фабрики в эксплуатацию).
+          </p>
+          <a href="#" className={styles.stageLink}>
+            <GoArrowUpRight color="#A8C686" />
+          </a>
+        </div>
+        <div className={styles.stages}>
+          <div className={styles.stage}>
+            <p className={styles.stageNumber}>1</p>
+            <p className={styles.boldText}>1. стадия</p>
+            <p className={styles.stageText}>
+              Строительства производства, поставки и наладки оборудования,
+              обучения персонала. Примерный срок: 1 год.
+            </p>
+            <a href="#" className={`${styles.stageLink} ${styles.stageLinkGr}`}>
+              <GoArrowUpRight color="#fff" />
+            </a>
+          </div>
+          <div className={`${styles.stage} ${styles.l_gr}`}>
+            <p className={styles.stageNumber}>2</p>
+            <p className={styles.boldText}>2. стадия</p>
+            <p className={styles.stageText}>
+              Начала работы и развития выпуска ассортимента. Примерный срок: 1
+              год.
+            </p>
+            <a href="#" className={styles.stageLink}>
+              <GoArrowUpRight color="#A8C686" />
+            </a>
+          </div>
+          <div className={`${styles.stage} ${styles.l_bl}`}>
+            <p className={styles.stageNumber}>3</p>
+            <p className={styles.boldText}>3. стадия</p>
+            <p className={styles.stageText}>
+              Развития национальной дистрибуции. Примерный срок: 1,5 года.
+            </p>
+            <a
+              href="#"
+              className={`${styles.stageLink} ${styles.stageLinkGreen}`}
+            >
+              <GoArrowUpRight color="#fff" />
+            </a>
+          </div>
+          <div className={`${styles.stage} ${styles.l_gr}`}>
+            <p className={styles.stageNumber}>4</p>
+            <p className={styles.boldText}>4. стадия</p>
+            <p className={styles.stageText}>
+              Развития экспорта. Примерный срок: 1,5 года.
+            </p>
+            <a href="#" className={styles.stageLink}>
+              <GoArrowUpRight color="#A8C686" />
+            </a>
+          </div>
+        </div>
+        <div className={styles.download}>
+          <h4 className={styles.downloadTitle}>Хотите скачать документы?</h4>
+          <div className={styles.downloadLinks}>
+            <a href="#">
+              <LuFileDown color="#0090FF" />
+              <span>Меморандум</span>
+            </a>
+            <a href="#">
+              <LuFileDown color="#0090FF" />
+              <span>Инвест проект</span>
+            </a>
+            <a href="#">
+              <LuFileDown color="#0090FF" />
+              <span>Бизнес план</span>
+            </a>
+          </div>
+          <button className={styles.registerButton}>
+            Зарегистрироваться сейчас
+          </button>
+        </div>
+      </section>
       <section className={styles.notes}>
         <h2>Примечания по финансовому плану:</h2>
         <p>
@@ -76,25 +362,25 @@ const Home = () => {
           <div>
             <span>PI</span>
             <p className={styles.bigText}>12,83%</p>
-            <p>PI</p>
+            <p className={styles.boldText}>PI</p>
             <p>(Profitability Index) - return on Investment Index</p>
           </div>
           <div className={styles.gr}>
             <span>PB</span>
             <p className={styles.bigText}>13</p>
-            <p>PB</p>
+            <p className={styles.boldText}>PB</p>
             <p>(Pay Back) - payback period of the project</p>
           </div>
           <div>
             <span>ARR</span>
             <p className={styles.bigText}>256,5%</p>
-            <p>ARR</p>
+            <p className={styles.boldText}>ARR</p>
             <p>(Accounting rate of return) - investment efficiency ratio</p>
           </div>
           <div className={styles.l_gr}>
             <span>IRR</span>
             <p className={styles.bigText}>214%</p>
-            <p>IRR</p>
+            <p className={styles.boldText}>IRR</p>
             <p>
               (Internal Rate of Return) - the rate at which the investment pays
               off completely
@@ -115,7 +401,7 @@ const Home = () => {
           <div>
             <span>MIRR</span>
             <p className={styles.bigText}>66,58%</p>
-            <p>MIRR</p>
+            <p className={styles.boldText}>MIRR</p>
             <p>
               (Modified internal rate of return) - a financial indicator that
               helps determine the attractiveness of investments.
@@ -124,7 +410,7 @@ const Home = () => {
           <div className={styles.l_gr}>
             <span>NPV</span>
             <p className={styles.bigText}>$42,2M</p>
-            <p>NPV</p>
+            <p className={styles.boldText}>NPV</p>
             <p>
               (Net Present Value) - The coefficient helps to determine how much
               income you can expect in the future by investing in the project
@@ -133,7 +419,48 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section></section>
+      <section className={styles.timelineContainer}>
+        <h2>Таймлайн проекта</h2>
+        <div className={styles.timeline}>
+          {items.map((item, index) => (
+            <div key={index} className={styles.timelineItem}>
+              <div
+                className={`${styles.date} ${
+                  item.status === true ? styles.true : ""
+                }`}
+              >
+                <span>{item.month}</span>
+                <span>{item.year}</span>
+              </div>
+
+              <div
+                className={`${styles.content} ${
+                  item.side === "right" ? styles.right : styles.left
+                }`}
+              >
+                <div className={styles.bridge}></div>
+                <h3>{item.title}</h3>
+                <p className={styles.percent}>{item.percent}</p>
+                <p className={styles.contentText}>{item.text}</p>
+                <p
+                  className={`${styles.status} ${
+                    item.status === true ? styles.true : ""
+                  }`}
+                >
+                  Статус<span></span>
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className={styles.timelineBox}>
+          <img src={logo} alt="Logo" />
+          <div>
+            <p>Получи финансовый прогноз на почту?телеонтелеграм</p>
+            <button>Финансовый прогноз xls</button>
+          </div>
+        </div>
+      </section>
       <section className={styles.businessBlock}>
         <h2>Наша бизнес-модель</h2>
         <div className="swiper-button-prev custom-prev"></div>
