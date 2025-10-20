@@ -12,6 +12,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import YouTubeClean from "../../components/YouTubeCleanProps/YouTubeCleanProps";
+import InvestorBenifits from "../../components/InvestorBenifits/InvestorBenifits";
 import { GoArrowUpRight } from "react-icons/go";
 import { LuFileDown } from "react-icons/lu";
 
@@ -103,51 +104,7 @@ const Home = () => {
         </div>
         <YouTubeClean videoId="ho2jfFgQVTk" />
       </section>
-      <section>
-        <div>
-          <h2>Главные выгоды инвестора</h2>
-          <p>
-            Мы нашли свою нишу на данном рынке для того, чтобы конкурировать с
-            самими собой, а не с наиболее известными компаниями и их всемирно
-            известными брендами на рынке.{" "}
-          </p>
-          <p>
-            Тем самым мы и отстраиваемся от конкурентов вне зависимости от
-            известности их брендов, и повышаем потенциальную прибыль ввиду того,
-            что сырье, которое мы решили использовать для наполнения, является
-            более простым и дешевым в производстве. Тем самым на существующем
-            рынке создаем свой рынок.{" "}
-          </p>
-          <p>
-            Помимо прочего, мы получаем возможность дифференциации по поставкам
-            сырья, не привязываясь только к одной стране (можно догадаться
-            какой). И это дает нам нужную свободу по выбору страны, в которой мы
-            будем строить свое высоко технологичное
-          </p>
-        </div>
-        <div>
-          <div>
-            <img />
-            <p>Инновация на традиционном рынке</p>
-          </div>
-          <div>
-            <img />
-            <p>Гарантированно высокий спрос</p>
-          </div>
-          <div>
-            <img />
-            <p>Расширение проекта в соседних сегментах</p>
-          </div>
-          <div>
-            <img />
-            <p>Перспективность проекта и надежость инвестиций</p>
-          </div>
-          <div>
-            <img />
-            <p>Компетенции руководителя проекта и команды</p>
-          </div>
-        </div>
-      </section>
+      <InvestorBenifits />
       <section className={styles.products}>
         <div className={styles.productsLeft}>
           <h2>Продукция</h2>

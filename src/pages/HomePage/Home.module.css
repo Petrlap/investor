@@ -2,6 +2,11 @@
   position: relative;
   margin-bottom: 100px;
 }
+
+.timelineContainer {
+  margin: 150px 0;
+}
+
 .businessBlock h2,
 .notes h2,
 .timelineContainer h2,
@@ -272,8 +277,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 6rem;
-  padding: 4rem 0;
+  padding: 1rem 0;
 }
 
 .timelineItem {
@@ -287,17 +291,34 @@
 .date {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 250px;
   position: relative;
   z-index: 2;
   background: #fff;
-  border-radius: 12px;
   padding: 0.5rem 1rem;
   font-family: "Mulish", sans-serif;
   font-weight: 900;
   font-size: 83px;
   line-height: 104px;
   color: #e6e6e6;
+}
+
+.timelineItem:not(:first-child):not(:last-child) .date {
+  height: 362px !important;
+  border-radius: 0 !important;
+}
+
+.timelineItem:first-child.date {
+  height: 320px !important;
+  bottom: -21px !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.timelineItem:last-child .date {
+  height: 320px !important;
+  top: -21px !important;
+  border-radius: 0 0 12px 12px !important;
 }
 
 .date.true span {
