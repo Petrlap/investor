@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/investor/static/css/main.5cb7828a.css",
+    "main.js": "/investor/static/js/main.3e88789f.js",
+    "static/media/phone.webp": "/investor/static/media/phone.a23691f7a8e5c021034d.webp",
+    "static/media/logo.webp": "/investor/static/media/logo.ec15649821fba04acef3.webp",
+    "static/media/img-1.webp": "/investor/static/media/img-1.c69aa2d9b455798648f3.webp",
+    "static/media/img-5.webp": "/investor/static/media/img-5.882e354c5df863d9d919.webp",
+    "static/media/img-4.webp": "/investor/static/media/img-4.5908567f14562b041408.webp",
+    "static/media/img-3.webp": "/investor/static/media/img-3.317ed0fc00332536e6d9.webp",
+    "static/media/img-2.webp": "/investor/static/media/img-2.449675e6236ea7ee22c2.webp",
+    "index.html": "/investor/index.html",
+    "main.5cb7828a.css.map": "/investor/static/css/main.5cb7828a.css.map",
+    "main.3e88789f.js.map": "/investor/static/js/main.3e88789f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5cb7828a.css",
+    "static/js/main.3e88789f.js"
+  ]
+}
