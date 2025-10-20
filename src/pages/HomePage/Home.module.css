@@ -309,7 +309,7 @@
   border-radius: 0 !important;
 }
 
-.timelineItem:first-child.date {
+.timelineItem:first-child .date {
   height: 320px !important;
   bottom: -21px !important;
   border-radius: 12px 12px 0 0 !important;
