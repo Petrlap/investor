@@ -132,7 +132,7 @@
 .active .cardImage {
   position: absolute;
   min-width: 156px;
-  left: -80px;
+  left: -70px;
 }
 
 .mobileList {
@@ -157,7 +157,6 @@
   background: none;
   border: none;
   width: auto;
-  padding: 6px 10px 6x 0px !important;
   padding-left: 0 !important;
 }
 .mobileList .cardImage {

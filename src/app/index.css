@@ -348,6 +348,9 @@ footer .logoDesc {
 .social-block__box.mob {
   display: none;
 }
+section {
+  overflow: hidden;
+}
 /* footer*/
 @media (max-width: 1439px) {
   header nav {
@@ -389,9 +392,6 @@ footer .logoDesc {
   }
   .business-block .swiper {
     overflow: initial;
-  }
-  .business-block .swiper-wrapper {
-    overflow: hidden;
   }
   .business-block .custom-pagination {
     bottom: -40px;
