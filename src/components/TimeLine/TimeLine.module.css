@@ -237,6 +237,7 @@
     overflow: hidden;
   }
   .timelineContainer h2 {
+    width: auto;
     text-align: left;
     font-weight: 700;
     font-size: 20px;
