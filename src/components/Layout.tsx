@@ -43,7 +43,7 @@ const Layout = () => {
             <img src={logo} alt="logo" />
           </NavLink>
           <div className="logoDesc">Comforta International Corporation</div>
-          <div className="social-block__box">
+          <div className="social-block__box desc">
             <MdMailOutline color="#fff" />
             <FaTelegramPlane color="#555454" />
             <AiOutlineWhatsApp color="#555454" />
@@ -73,6 +73,11 @@ const Layout = () => {
                 <FiPhone color="#A8C686" />
                 <a href="tel:+18001234567">+1 800 123 4567</a>
               </div>
+            </div>
+            <div className="social-block__box mob">
+              <MdMailOutline color="#fff" />
+              <FaTelegramPlane color="#555454" />
+              <AiOutlineWhatsApp color="#555454" />
             </div>
           </div>
         </div>

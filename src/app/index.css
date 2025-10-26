@@ -26,6 +26,7 @@ body {
 
 .container {
   max-width: 1260px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -344,5 +345,98 @@ footer .logoDesc {
   line-height: 140%;
   color: #a8c686;
 }
-
+.social-block__box.mob {
+  display: none;
+}
 /* footer*/
+@media (max-width: 1439px) {
+  header nav {
+    display: none;
+  }
+  .user-add {
+    margin-left: auto;
+  }
+  .business-block .custom-next {
+    right: 0;
+  }
+  .business-block .custom-prev {
+    left: 0;
+  }
+}
+@media (max-width: 1023px) {
+  header nav,
+  header .logoDesc {
+    display: none;
+  }
+  header {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+  .user-add {
+    width: 45px;
+    height: 45px;
+  }
+  .footer-right,
+  .social-block,
+  .footer-bottom,
+  .footer-right__buttons,
+  footer nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: initial;
+    align-items: center;
+  }
+  .business-block .swiper {
+    overflow: initial;
+  }
+  .business-block .swiper-wrapper {
+    overflow: hidden;
+  }
+  .business-block .custom-pagination {
+    bottom: -40px;
+  }
+  .business-block .custom-next,
+  .business-block .custom-prev {
+    bottom: -120px;
+    top: auto;
+  }
+  .business-block .custom-next {
+    right: calc(50% - 70px);
+  }
+  .business-block .custom-prev {
+    left: calc(50% - 70px);
+  }
+  footer {
+    padding: 50px 30px 15px 30px;
+  }
+  footer .logo-link > img,
+  .logo-link {
+    width: 152px;
+  }
+  footer .logoDesc {
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  .social-block {
+    gap: 30px;
+  }
+  .footer-right__buttons {
+    margin: 30px 0 0 0;
+  }
+  .social-block__box.desc {
+    display: none;
+  }
+  .social-block__box.mob {
+    display: flex;
+  }
+  .footer-bottom {
+    gap: 20px;
+  }
+  .footer-bottom span {
+    order: 1;
+  }
+}

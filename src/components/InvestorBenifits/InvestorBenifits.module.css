@@ -9,6 +9,18 @@
   position: relative;
 }
 
+.businessBlock h2 {
+  width: 100%;
+  font-family: "Mulish", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 48px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
 .left {
   display: flex;
   flex-direction: column;
@@ -121,4 +133,95 @@
   position: absolute;
   min-width: 156px;
   left: -80px;
+}
+
+.mobileList {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 10px;
+  position: relative;
+}
+
+.mobileList::-webkit-scrollbar {
+  display: none;
+}
+
+.mobileList .card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: auto;
+  background: none;
+  border: none;
+  width: auto;
+  padding: 6px 10px 6x 0px !important;
+  padding-left: 0 !important;
+}
+.mobileList .cardImage {
+  display: none;
+}
+.mobileList .cardTitle {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+}
+.mobileList .active .cardTitle {
+  color: #a8c686;
+}
+
+@media (max-width: 1439px) {
+  .section {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .section {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+    gap: 30px;
+  }
+  .right {
+    width: 100%;
+    flex-direction: row;
+  }
+  .right::before,
+  .right::after {
+    content: "";
+    position: absolute;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: 2px;
+    background-color: #cccccc59;
+    pointer-events: none;
+  }
+  .right::before {
+    top: 30px;
+  }
+  .right::after {
+    top: 105px;
+  }
+  .controls {
+    margin-top: 100px;
+  }
+  .arrowL,
+  .arrowR {
+    left: auto !important;
+    right: 0 !important;
+  }
+  .arrowL {
+    right: 75px !important;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+  }
 }

@@ -87,21 +87,42 @@ export default function InvestorBenefits() {
       </div>
 
       <div className={styles.right}>
-        <Swiper
-          direction="vertical"
-          slidesPerView={benefits.length}
-          spaceBetween={10}
-          allowTouchMove={false}
-          modules={[Navigation]}
-          className={styles.swiper}
-          navigation={{
-            nextEl: ".custom-next",
-            prevEl: ".custom-prev",
-          }}
-        >
-          {benefits.map((benefit, i) => (
-            <SwiperSlide key={benefit.id}>
+        {window.innerWidth > 1023 ? (
+          <Swiper
+            direction="vertical"
+            slidesPerView={benefits.length}
+            spaceBetween={10}
+            allowTouchMove={false}
+            modules={[Navigation]}
+            className={styles.swiper}
+            navigation={{
+              nextEl: ".custom-next",
+              prevEl: ".custom-prev",
+            }}
+          >
+            {benefits.map((benefit, i) => (
+              <SwiperSlide key={benefit.id}>
+                <button
+                  className={`${styles.card} ${
+                    activeIndex === i ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveIndex(i)}
+                >
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className={styles.cardImage}
+                  />
+                  <span className={styles.cardTitle}>{benefit.title}</span>
+                </button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className={styles.mobileList}>
+            {benefits.map((benefit, i) => (
               <button
+                key={benefit.id}
                 className={`${styles.card} ${
                   activeIndex === i ? styles.active : ""
                 }`}
@@ -112,11 +133,20 @@ export default function InvestorBenefits() {
                   alt={benefit.title}
                   className={styles.cardImage}
                 />
-                <span className={styles.cardTitle}>{benefit.title}</span>
+                <span
+                  className={styles.cardTitle}
+                  dangerouslySetInnerHTML={{
+                    __html: (() => {
+                      const text = benefit.title;
+                      const mid = Math.ceil(text.length / 2);
+                      return `${text.slice(0, mid)}<br>${text.slice(mid)}`;
+                    })(),
+                  }}
+                />
               </button>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
