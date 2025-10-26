@@ -234,6 +234,7 @@
 @media (max-width: 1023px) {
   .timeline {
     padding: 16px 20px;
+    overflow: hidden;
   }
   .timelineContainer h2 {
     text-align: left;
