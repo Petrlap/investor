@@ -1,5 +1,6 @@
 import styles from "./Notes.module.css";
 import { LuFileDown } from "react-icons/lu";
+import { IconWrapper } from "../../components/IconWrapper/IconWrapper";
 
 export default function Notes() {
   return (
@@ -54,7 +55,7 @@ export default function Notes() {
             показываем только один по наиболее перспективной стране.
           </p>
           <button>
-            Бизнес план открыть <LuFileDown />
+            Бизнес план открыть <IconWrapper Icon={LuFileDown} />
           </button>
         </div>
         <div>

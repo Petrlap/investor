@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LuCircleChevronDown, LuCircleChevronUp } from "react-icons/lu";
 import { ContactForm } from "../../components/ContactForm/ContactForm";
 import styles from "./FAQ.module.css";
+import { IconWrapper } from "../../components/IconWrapper/IconWrapper";
 
 type Question = {
   id: number;
@@ -108,9 +109,12 @@ export const FAQ: React.FC = () => {
               {id}. {question}
             </span>
             {openId === id ? (
-              <LuCircleChevronUp className={styles.icon} />
+              <IconWrapper
+                Icon={LuCircleChevronUp}
+                className={styles.icon}
+              />
             ) : (
-              <LuCircleChevronDown className={styles.icon} />
+              <IconWrapper Icon={LuCircleChevronDown} className={styles.icon} />
             )}
           </button>
           <div

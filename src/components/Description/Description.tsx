@@ -7,6 +7,7 @@ import img4 from "../../assets/products/img-4.webp";
 import img5 from "../../assets/products/img-5.webp";
 import { GoArrowUpRight } from "react-icons/go";
 import { LuFileDown } from "react-icons/lu";
+import { IconWrapper } from "../IconWrapper/IconWrapper";
 
 interface WrapperProps {
   condition: boolean;
@@ -57,15 +58,27 @@ export default function Description() {
           <h4>Документы по проекту</h4>
           <div className={styles.goalLinks}>
             <a href="#">
-              <LuFileDown color="#0090FF" />
+              <IconWrapper
+                Icon={LuFileDown}
+                className=""
+                style={{ color: "#0090FF" }}
+              />
               <span>Меморандум</span>
             </a>
             <a href="#">
-              <LuFileDown color="#0090FF" />
+              <IconWrapper
+                Icon={LuFileDown}
+                className=""
+                style={{ color: "#0090FF" }}
+              />
               <span>Инвест проект</span>
             </a>
             <a href="#">
-              <LuFileDown color="#0090FF" />
+              <IconWrapper
+                Icon={LuFileDown}
+                className=""
+                style={{ color: "#0090FF" }}
+              />
               <span>Бизнес план</span>
             </a>
           </div>
@@ -94,7 +107,11 @@ export default function Description() {
             фабрики в эксплуатацию).
           </p>
           <a href="#" className={styles.stageLink}>
-            <GoArrowUpRight color="#A8C686" />
+            <IconWrapper
+              Icon={GoArrowUpRight}
+              className=""
+              style={{ color: "#A8C686" }}
+            />
           </a>
         </div>
         <div className={styles.stages}>
@@ -106,7 +123,11 @@ export default function Description() {
               обучения персонала. Примерный срок: 1 год.
             </p>
             <a href="#" className={`${styles.stageLink} ${styles.stageLinkGr}`}>
-              <GoArrowUpRight color="#fff" />
+              <IconWrapper
+                Icon={GoArrowUpRight}
+                className=""
+                style={{ color: "#fff" }}
+              />
             </a>
           </div>
           <div className={`${styles.stage} ${styles.l_gr}`}>
@@ -117,7 +138,11 @@ export default function Description() {
               год.
             </p>
             <a href="#" className={styles.stageLink}>
-              <GoArrowUpRight color="#A8C686" />
+              <IconWrapper
+                Icon={GoArrowUpRight}
+                className=""
+                style={{ color: "#A8C686" }}
+              />
             </a>
           </div>
           <div className={`${styles.stage} ${styles.l_bl}`}>
@@ -130,7 +155,11 @@ export default function Description() {
               href="#"
               className={`${styles.stageLink} ${styles.stageLinkGreen}`}
             >
-              <GoArrowUpRight color="#fff" />
+              <IconWrapper
+                Icon={GoArrowUpRight}
+                className=""
+                style={{ color: "#fff" }}
+              />
             </a>
           </div>
           <div className={`${styles.stage} ${styles.l_gr}`}>
@@ -140,7 +169,11 @@ export default function Description() {
               Развития экспорта. Примерный срок: 1,5 года.
             </p>
             <a href="#" className={styles.stageLink}>
-              <GoArrowUpRight color="#A8C686" />
+              <IconWrapper
+                Icon={GoArrowUpRight}
+                className=""
+                style={{ color: "#A8C686" }}
+              />
             </a>
           </div>
         </div>
@@ -148,15 +181,29 @@ export default function Description() {
           <h4 className={styles.downloadTitle}>Хотите скачать документы?</h4>
           <div className={styles.downloadLinks}>
             <a href="#">
-              <LuFileDown color="#0090FF" />
+              <IconWrapper
+                Icon={LuFileDown}
+                className=""
+                style={{ color: "#0090FF" }}
+              />
               <span>Меморандум</span>
             </a>
             <a href="#">
-              <LuFileDown color="#0090FF" />
+              {" "}
+              <IconWrapper
+                Icon={LuFileDown}
+                className=""
+                style={{ color: "#0090FF" }}
+              />
               <span>Инвест проект</span>
             </a>
             <a href="#">
-              <LuFileDown color="#0090FF" />
+              {" "}
+              <IconWrapper
+                Icon={LuFileDown}
+                className=""
+                style={{ color: "#0090FF" }}
+              />
               <span>Бизнес план</span>
             </a>
           </div>

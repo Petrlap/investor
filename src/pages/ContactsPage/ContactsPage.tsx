@@ -3,6 +3,7 @@ import { FiPhone } from "react-icons/fi";
 import { FaTelegramPlane } from "react-icons/fa";
 import styles from "./Contacts.module.css";
 import { ContactForm } from "../../components/ContactForm/ContactForm";
+import { IconWrapper } from "../../components/IconWrapper/IconWrapper";
 
 const Contacts = () => {
   return (
@@ -30,17 +31,26 @@ const Contacts = () => {
       <div className={styles.contactsBlock}>
         <div>
           <div>
-            <BiCopy color="#888" style={{ width: 18, height: 18 }} />
+            <IconWrapper
+              Icon={BiCopy}
+              style={{ color: "#888", width: 18, height: 18 }}
+            />
             <a href="mailto:Invest@comfortacorp.com">Invest@comfortacorp.com</a>
           </div>
           <div>
-            <FiPhone color="#A8C686" style={{ width: 24, height: 24 }} />
+            <IconWrapper
+              Icon={FiPhone}
+              style={{ color: "#A8C686", width: 24, height: 24 }}
+            />
             <a href="tel:+18001234567">+1 800 123 4567</a>
           </div>
         </div>
         <div>
           <div>
-            <FiPhone color="#A8C686" style={{ width: 24, height: 24 }} />
+            <IconWrapper
+              Icon={FiPhone}
+              style={{ color: "#A8C686", width: 24, height: 24 }}
+            />
             <a
               href="https://wa.me/18001234567"
               target="_blank"
@@ -53,7 +63,11 @@ const Contacts = () => {
         </div>
         <div>
           <div>
-            <FaTelegramPlane color="#fff" className={styles.tgIcon} />
+            <IconWrapper
+              Icon={FaTelegramPlane}
+              className={styles.tgIcon}
+              style={{ color: "#fff" }}
+            />
             <a
               href="https://t.me/comforta_invest"
               target="_blank"

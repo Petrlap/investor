@@ -1,6 +1,7 @@
 import LocalVideoClean from "../../components/LocalVideoClean/LocalVideoClean";
 import { GoArrowUpRight } from "react-icons/go";
 import styles from "./VideoBlock.module.css";
+import { IconWrapper } from "../../components/IconWrapper/IconWrapper";
 
 export default function VideoBlock() {
   return (
@@ -43,7 +44,12 @@ export default function VideoBlock() {
           </div>
         </div>
         <button>
-          Инвестировать <GoArrowUpRight color="#fff" />
+          Инвестировать
+          <IconWrapper
+            Icon={GoArrowUpRight}
+            className=""
+            style={{ color: "#fff" }}
+          />
         </button>
       </div>
       <LocalVideoClean />

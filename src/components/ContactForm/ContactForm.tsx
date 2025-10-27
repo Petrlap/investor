@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { RiTelegramLine, RiWhatsappLine, RiMailLine } from "react-icons/ri";
+import { FaTelegramPlane } from "react-icons/fa";
+import { MdMailOutline } from "react-icons/md";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+import { IconWrapper } from "../IconWrapper/IconWrapper";
 import phone from "../../assets/phone.webp";
 import styles from "./ContactForm.module.css";
 
@@ -137,7 +140,11 @@ export const ContactForm: React.FC = () => {
                 onClick={() => handleSelectChannel("telegram")}
                 aria-label="Связаться в Telegram"
               >
-                <RiTelegramLine size={20} />
+                <IconWrapper
+                  Icon={FaTelegramPlane}
+                  size={26}
+                  style={{ color: "#fff" }}
+                />
               </button>
 
               <button
@@ -148,7 +155,11 @@ export const ContactForm: React.FC = () => {
                 onClick={() => handleSelectChannel("whatsapp")}
                 aria-label="Связаться в WhatsApp"
               >
-                <RiWhatsappLine size={20} />
+                <IconWrapper
+                  Icon={AiOutlineWhatsApp}
+                  size={26}
+                  style={{ color: "#fff" }}
+                />
               </button>
 
               <button
@@ -159,7 +170,11 @@ export const ContactForm: React.FC = () => {
                 onClick={() => handleSelectChannel("email")}
                 aria-label="Связаться по Email"
               >
-                <RiMailLine size={20} />
+                <IconWrapper
+                  Icon={MdMailOutline}
+                  size={26}
+                  style={{ color: "#fff" }}
+                />
               </button>
 
               <button type="submit" className={styles.submitBtn}>
@@ -172,7 +187,9 @@ export const ContactForm: React.FC = () => {
                 name="agree"
                 checked={formData.agree}
                 onChange={handleChange}
-                className={errors.agree ? styles.invalidCheckbox : ""}
+                className={`${styles.checkboxAgree} ${
+                  errors.agree ? styles.invalidCheckbox : ""
+                }`}
               />
               <span>
                 Согласен на обработку <a href="/">персональных данных</a>

@@ -1,14 +1,23 @@
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import logo from "../assets/logo.webp";
 import { RiUserAddLine } from "react-icons/ri";
-import { FiMenu, FiPhone } from "react-icons/fi";
+import { FiMenu, FiPhone, FiX } from "react-icons/fi";
 import { FaTelegramPlane } from "react-icons/fa";
 import { MdMailOutline } from "react-icons/md";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FaArrowRight } from "react-icons/fa6";
 import { BiCopy } from "react-icons/bi";
+import { IconWrapper } from "../components/IconWrapper/IconWrapper";
+import styles from "./Layout.module.css";
 
 const Layout = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
   return (
     <>
       <header>
@@ -28,11 +37,52 @@ const Layout = () => {
           <NavLink to="/contacts">Контакты</NavLink>
         </nav>
         <button className="user-add">
-          <RiUserAddLine size={24} color="#fff" />
+          <IconWrapper
+            Icon={RiUserAddLine}
+            size={24}
+            className=""
+            style={{ color: "#fff" }}
+          />
         </button>
-        <button>
-          <FiMenu size={24} color="#000" />
+        <button onClick={toggleMenu} className={styles.burgerBtn}>
+          <IconWrapper
+            Icon={menuOpen ? FiX : FiMenu}
+            size={28}
+            style={{ color: menuOpen ? "#fff" : "#000" }}
+          />
         </button>
+
+        {/* Модалка меню */}
+        <div
+          className={`${styles.menuModal} ${
+            menuOpen ? styles.menuModalOpen : ""
+          }`}
+          onClick={toggleMenu}
+        >
+          <div
+            className={styles.menuContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <NavLink to="/about" onClick={toggleMenu}>
+              О компании
+            </NavLink>
+            <NavLink to="/marketoverview" onClick={toggleMenu}>
+              Обзор рынка
+            </NavLink>
+            <NavLink to="/responsibility" onClick={toggleMenu}>
+              Соц Ответственность
+            </NavLink>
+            <NavLink to="/photoproject" onClick={toggleMenu}>
+              Фото проекта
+            </NavLink>
+            <NavLink to="/faq" onClick={toggleMenu}>
+              FAQ
+            </NavLink>
+            <NavLink to="/contacts" onClick={toggleMenu}>
+              Контакты
+            </NavLink>
+          </div>
+        </div>
       </header>
       <main className="container">
         <Outlet />
@@ -44,9 +94,21 @@ const Layout = () => {
           </NavLink>
           <div className="logoDesc">Comforta International Corporation</div>
           <div className="social-block__box desc">
-            <MdMailOutline color="#fff" />
-            <FaTelegramPlane color="#555454" />
-            <AiOutlineWhatsApp color="#555454" />
+            <IconWrapper
+              Icon={MdMailOutline}
+              className=""
+              style={{ color: "#fff" }}
+            />
+            <IconWrapper
+              Icon={FaTelegramPlane}
+              className=""
+              style={{ color: "#555454" }}
+            />
+            <IconWrapper
+              Icon={AiOutlineWhatsApp}
+              className=""
+              style={{ color: "#555454" }}
+            />
           </div>
         </div>
         <div className="footer-right">
@@ -60,24 +122,49 @@ const Layout = () => {
           </nav>
           <div className="footer-right__buttons">
             <button>
-              Инвестировать <FaArrowRight color="#fff" />
+              Инвестировать{" "}
+              <IconWrapper
+                Icon={FaArrowRight}
+                className=""
+                style={{ color: "#fff" }}
+              />
             </button>
             <div className="footer-right__box">
               <div>
-                <BiCopy color="#888" />
+                <IconWrapper
+                  Icon={BiCopy}
+                  className=""
+                  style={{ color: "#888" }}
+                />
                 <a href="mailto:Invest@comfortacorp.com">
                   Invest@comfortacorp.com
                 </a>
               </div>
               <div>
-                <FiPhone color="#A8C686" />
+                <IconWrapper
+                  Icon={FiPhone}
+                  className=""
+                  style={{ color: "#A8C686" }}
+                />
                 <a href="tel:+18001234567">+1 800 123 4567</a>
               </div>
             </div>
             <div className="social-block__box mob">
-              <MdMailOutline color="#fff" />
-              <FaTelegramPlane color="#555454" />
-              <AiOutlineWhatsApp color="#555454" />
+              <IconWrapper
+                Icon={MdMailOutline}
+                className=""
+                style={{ color: "#fff" }}
+              />
+              <IconWrapper
+                Icon={FaTelegramPlane}
+                className=""
+                style={{ color: "#555454" }}
+              />
+              <IconWrapper
+                Icon={AiOutlineWhatsApp}
+                className=""
+                style={{ color: "#555454" }}
+              />
             </div>
           </div>
         </div>

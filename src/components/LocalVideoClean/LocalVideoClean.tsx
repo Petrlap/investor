@@ -3,6 +3,7 @@ import { FaYoutube } from "react-icons/fa";
 import bannerVideo from "../../assets/banner.mp4";
 import bannerPoster from "../../assets/banner.webp";
 import styles from "./LocalVideoClean.module.css";
+import { IconWrapper } from "../../components/IconWrapper/IconWrapper";
 
 export default function LocalVideoClean() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -35,7 +36,12 @@ export default function LocalVideoClean() {
             backgroundImage: `url(${bannerPoster})`,
           }}
         >
-          <FaYoutube color="#c61f25" size={100} />
+          <IconWrapper
+            Icon={FaYoutube}
+            size={24}
+            className=""
+            style={{ color: "#c61f25", width: 100 }}
+          />
         </div>
       ) : (
         <video

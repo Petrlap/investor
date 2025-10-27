@@ -88,7 +88,7 @@
   display: none !important;
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1438px) {
   .videoBlock {
     width: 100%;
     left: auto;

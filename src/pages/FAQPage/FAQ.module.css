@@ -45,6 +45,8 @@
 }
 
 .icon {
+  width: 48px;
+  height: 48px;
   font-size: 46px;
   color: #000;
   transition: transform 0.3s;

@@ -28,7 +28,7 @@
   object-fit: cover;
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1438px) {
   .videoFrame {
     width: calc(100% - 440px);
     padding-bottom: 56.5%;

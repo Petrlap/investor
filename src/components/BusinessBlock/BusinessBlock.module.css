@@ -49,7 +49,7 @@
   object-position: center;
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1438px) {
   .businessBlock {
     padding: 0 20px;
   }

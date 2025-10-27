@@ -181,7 +181,8 @@ header > img,
   color: #a8c686;
 }
 
-nav {
+header nav,
+footer nav {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -349,7 +350,7 @@ footer .logoDesc {
   display: none;
 }
 /* footer*/
-@media (max-width: 1439px) {
+@media (max-width: 1438px) {
   header nav {
     display: none;
   }
