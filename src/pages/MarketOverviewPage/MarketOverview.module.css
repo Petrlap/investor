@@ -1,0 +1,378 @@
+.head {
+  margin-top: 70px;
+}
+.head,
+.hypieneProduct,
+.hypieneProduct div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.head img,
+.headBox,
+.hypieneProduct img {
+  width: calc(50% - 10px);
+}
+.headBox h1 {
+  max-width: 460px;
+  font-family: "Mulish", sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+  color: #000000;
+}
+.headBox p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+  margin-top: 20px;
+}
+.diaper {
+  margin: 100px 0 50px 0;
+}
+.diaper > p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+  margin-top: 40px;
+}
+.diaperWrapper {
+  display: flex;
+  gap: 30px;
+}
+.diaperBox {
+  width: calc((100% - 60px) / 3);
+  margin-top: 20px;
+}
+.diaperBox p,
+.diaperBox li {
+  font-family: "Mulish", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.diaperBox li {
+  font-weight: 400 !important;
+}
+.hypieneProduct h2 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+}
+.hypieneProduct p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.hypieneProduct {
+  align-items: normal !important;
+  flex-direction: column;
+}
+.hypieneProduct div {
+  display: flex;
+  margin-top: 40px;
+}
+.hypieneProduct {
+  margin: 50px 0;
+}
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 30px;
+  margin: 100px 0;
+}
+.textBlock p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.textImageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.textImageItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.textImageItem div,
+.textImageItem img {
+  width: calc(50% - 10px);
+}
+.textImageBox h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 46px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.textImageBox p,
+.textImageBox li {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+}
+.trends {
+  margin: 100px 0;
+}
+.trends h2 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 48px;
+  color: #000000;
+  margin-top: 30px;
+}
+.trends p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.swot {
+  margin-bottom: 100px;
+}
+.swot h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 46px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.swotBlock {
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 30px 20px 30px;
+  gap: 20px;
+}
+.swotItem,
+.informationItem {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+.swotItem p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  margin-bottom: 5px;
+}
+.swotItem li {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  list-style: disc;
+  margin-left: 20px;
+}
+.information {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.informationItem h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 46px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.informationItem p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+}
+.bottomBlock {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 100px;
+}
+.bottomBlock img {
+  margin-bottom: 40px;
+}
+.bottomBlock p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+}
+.mob {
+  display: none;
+}
+@media (max-width: 1438px) {
+  .head,
+  .diaper,
+  .hypieneProduct,
+  .textImageWrapper,
+  .trends,
+  .swot,
+  .information {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .mob {
+    display: flex;
+  }
+  .desk,
+  .swot,
+  .information {
+    display: none;
+  }
+  .headBox {
+    width: 100%;
+  }
+  .headBox h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+  }
+  .head img,
+  .diaper img,
+  .textImageItem img {
+    width: 100%;
+    border-radius: 24px;
+  }
+  .headBox p {
+    font-size: 14px;
+    line-height: 18px;
+    color: #3d3d3d;
+  }
+  .diaper {
+    margin: 100px 0 70px 0;
+  }
+  .diaper > p {
+    font-size: 14px;
+    line-height: 18px;
+    color: #3d3d3d;
+    margin-top: 20px;
+  }
+  .diaperWrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+  .diaperBox {
+    width: 100%;
+  }
+  .diaperBox p {
+    font-weight: 700;
+  }
+  .diaperBox p,
+  .diaperBox li,
+  .hypieneProduct h2,
+  .hypieneProduct p {
+    font-size: 14px;
+    line-height: 18px;
+    color: #3d3d3d;
+  }
+  .hypieneProduct div {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .hypieneProduct img {
+    width: 100%;
+  }
+  .textBlock {
+    padding: 40px 20px;
+    border-radius: 0;
+  }
+  .textBlock p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .textImageWrapper {
+    gap: 80px;
+  }
+  .textImageWrapper .textImageItem:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+  .textImageWrapper .textImageItem:nth-child(even) {
+    flex-direction: column;
+  }
+  .textImageItem div,
+  .textImageItem img {
+    width: 100%;
+  }
+  .textImageItem img,
+  .trends img {
+    border-radius: 24px;
+    height: 465px;
+    object-fit: cover;
+  }
+  .textImageBox h2 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 10px;
+  }
+  .textImageBox li,
+  .textImageBox p {
+    font-size: 14px;
+    line-height: 18px;
+    color: #3d3d3d;
+  }
+  .trends h2 {
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 10px;
+  }
+  .trends p {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3d3d3d;
+  }
+  .bottomBlock {
+    border-radius: 0;
+    padding: 30px 20px;
+  }
+  .bottomBlock img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+  .bottomBlock p b {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+  }
+  .bottomBlock p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3d3d3d;
+    margin-bottom: 10px;
+  }
+}

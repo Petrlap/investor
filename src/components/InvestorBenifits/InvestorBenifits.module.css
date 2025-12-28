@@ -170,6 +170,33 @@
 .mobileList .active .cardTitle {
   color: #a8c686;
 }
+.skeletonCard {
+  cursor: default !important;
+  pointer-events: none;
+}
+.skeletonImage {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  min-height: 200px;
+}
+.skeletonText {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+  display: block !important;
+  height: 20px;
+  margin-top: 10px;
+}
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 
 @media (max-width: 1438px) {
   .section {

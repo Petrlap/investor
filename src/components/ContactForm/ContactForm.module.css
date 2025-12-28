@@ -179,3 +179,60 @@ textarea {
   right: -30px;
   margin-left: -20px;
 }
+.submitBtn.mob {
+  display: none;
+}
+@media (max-width: 1438px) {
+  .formContainer {
+    height: 420px;
+  }
+}
+@media (max-width: 1023px) {
+  .formContainer {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    padding: 30px 20px;
+    height: auto;
+  }
+  .formContainer > img {
+    display: none;
+  }
+  .contactForm {
+    margin: 30px 0 0 0;
+    flex-direction: column;
+  }
+  .formTitle {
+    font-size: 19px;
+    line-height: 100%;
+  }
+  .formText {
+    font-size: 13px;
+    line-height: 100%;
+  }
+  .formLeft,
+  .formRight {
+    width: 100%;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 14px;
+    line-height: 18px;
+    color: #929090;
+  }
+  input,
+  textarea {
+    padding: 17px 20px;
+  }
+  .submitBtn.desk {
+    display: none;
+  }
+  .submitBtn.mob {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .buttonsRow {
+    margin: 10px 0;
+  }
+}

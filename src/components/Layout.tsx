@@ -48,7 +48,7 @@ const Layout = () => {
           <IconWrapper
             Icon={menuOpen ? FiX : FiMenu}
             size={28}
-            style={{ color: menuOpen ? "#fff" : "#000" }}
+            style={{ color: menuOpen ? "#1A1B1E" : "#000" }}
           />
         </button>
 
@@ -59,6 +59,7 @@ const Layout = () => {
           }`}
           onClick={toggleMenu}
         >
+          <img src={logo} className={styles.menuModalLogo} alt="Logo" />
           <div
             className={styles.menuContent}
             onClick={(e) => e.stopPropagation()}
@@ -82,6 +83,17 @@ const Layout = () => {
               Контакты
             </NavLink>
           </div>
+          <hr></hr>
+          <p>Войдите в систему и получите полный доступ к функциям Comforta</p>
+          <button className={styles.modalBtn}>
+            <IconWrapper
+              Icon={RiUserAddLine}
+              size={24}
+              className=""
+              style={{ color: "#fff" }}
+            />
+            Войти
+          </button>
         </div>
       </header>
       <main className="container">

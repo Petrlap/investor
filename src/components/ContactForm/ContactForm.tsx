@@ -177,10 +177,19 @@ export const ContactForm: React.FC = () => {
                 />
               </button>
 
-              <button type="submit" className={styles.submitBtn}>
+              <button
+                type="submit"
+                className={`${styles.submitBtn} ${styles.desk}`}
+              >
                 Задать вопрос
               </button>
             </div>
+            <button
+              type="submit"
+              className={`${styles.submitBtn} ${styles.mob}`}
+            >
+              Задать вопрос
+            </button>
             <label className={styles.agreeRow}>
               <input
                 type="checkbox"

@@ -1,25 +1,4 @@
-"use client";
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import styles from "./InvestorBenifits.module.css";
-import img1 from "../../assets/benifits/img-1.webp";
-import img2 from "../../assets/benifits/img-2.webp";
-import img3 from "../../assets/benifits/img-3.webp";
-import img4 from "../../assets/benifits/img-4.webp";
-import img5 from "../../assets/benifits/img-5.webp";
-
-interface Benefit {
-  id: number;
-  title: string;
-  image: string;
-  text: string;
-}
-
-const benefits: Benefit[] = [
+/*const benefitsOLD: Benefit[] = [
   {
     id: 1,
     title: "Инновация на традиционном рынке",
@@ -54,55 +33,195 @@ const benefits: Benefit[] = [
     image: img5,
     text: `Проект реализуется опытной командой с глубокими знаниями отрасли и подтверждёнными результатами.`,
   },
-];
+];*/
+"use client";
+import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import styles from "./InvestorBenifits.module.css";
+import img1 from "../../assets/benifits/img-1.webp";
+import img2 from "../../assets/benifits/img-2.webp";
+import img3 from "../../assets/benifits/img-3.webp";
+import img4 from "../../assets/benifits/img-4.webp";
+import img5 from "../../assets/benifits/img-5.webp";
+
+interface Benefit {
+  id: number;
+  title: string;
+  image: string;
+  text: string;
+}
+
+const imageMap: Record<number, string> = {
+  1: img1,
+  2: img2,
+  3: img3,
+  4: img4,
+  5: img5,
+};
 
 export default function InvestorBenefits() {
+  const [benefits, setBenefits] = useState<Benefit[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch(
+          "https://admin.sw-testsite.ru/api/iblocks"
+        );
+
+        if (!response.ok) return;
+
+        const data = await response.json();
+        const apiBenefits = data.iblocks.map((item: any) => ({
+          id: item.id,
+          title: item.title,
+          image: imageMap[item.id] || img1,
+          text: item.content,
+        }));
+
+        setBenefits(apiBenefits);
+      } catch (error) {
+        console.error("Ошибка:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handlePrev = () =>
+    benefits.length > 0 &&
     setActiveIndex((prev) => (prev - 1 + benefits.length) % benefits.length);
   const handleNext = () =>
+    benefits.length > 0 &&
     setActiveIndex((prev) => (prev + 1) % benefits.length);
+
+  const renderSkeleton = () => {
+    const skeletonCount = 5;
+    const isDesktop = typeof window !== "undefined" && window.innerWidth > 1023;
+
+    if (isDesktop) {
+      return (
+        <Swiper
+          direction="vertical"
+          slidesPerView={skeletonCount}
+          spaceBetween={10}
+          allowTouchMove={false}
+          modules={[Navigation]}
+          className={styles.swiper}
+          navigation={{
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+          }}
+        >
+          {[...Array(skeletonCount)].map((_, i) => (
+            <SwiperSlide key={i}>
+              <div className={`${styles.card} ${styles.skeletonCard}`}>
+                <div
+                  className={`${styles.cardImage} ${styles.skeletonImage}`}
+                />
+                <div className={`${styles.cardTitle} ${styles.skeletonText}`} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      );
+    }
+
+    return (
+      <div className={styles.mobileList}>
+        {[...Array(skeletonCount)].map((_, i) => (
+          <div key={i} className={`${styles.card} ${styles.skeletonCard}`}>
+            <div className={`${styles.cardImage} ${styles.skeletonImage}`} />
+            <div className={`${styles.cardTitle} ${styles.skeletonText}`} />
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <section className={styles.section}>
       <div className={styles.left}>
         <div>
           <h2 className={styles.title}>Главные выгоды инвестора</h2>
-
-          <p key={activeIndex} className={styles.text}>
-            {benefits[activeIndex].text}
-          </p>
+          {isLoading ? (
+            <div
+              className={`${styles.text} ${styles.skeletonText}`}
+              style={{ height: "120px" }}
+            />
+          ) : benefits.length > 0 ? (
+            <p key={activeIndex} className={styles.text}>
+              {benefits[activeIndex].text}
+            </p>
+          ) : (
+            <p className={styles.text}>Данные временно недоступны</p>
+          )}
         </div>
+
+        {/* КНОПКИ СЛАЙДЕРА - ВСЕГДА ПОКАЗЫВАЕМ, КАК В ОРИГИНАЛЕ */}
         <div className={styles.controls}>
           <button
             onClick={handlePrev}
-            className={`${"swiper-button-prev custom-prev"} ${styles.arrowL}`}
+            className={`swiper-button-prev custom-prev ${styles.arrowL}`}
+            disabled={isLoading || benefits.length === 0}
           ></button>
           <button
             onClick={handleNext}
-            className={`${"swiper-button-next custom-next"} ${styles.arrowR}`}
+            className={`swiper-button-next custom-next ${styles.arrowR}`}
+            disabled={isLoading || benefits.length === 0}
           ></button>
         </div>
       </div>
 
       <div className={styles.right}>
-        {window.innerWidth > 1023 ? (
-          <Swiper
-            direction="vertical"
-            slidesPerView={benefits.length}
-            spaceBetween={10}
-            allowTouchMove={false}
-            modules={[Navigation]}
-            className={styles.swiper}
-            navigation={{
-              nextEl: ".custom-next",
-              prevEl: ".custom-prev",
-            }}
-          >
-            {benefits.map((benefit, i) => (
-              <SwiperSlide key={benefit.id}>
+        {isLoading ? (
+          renderSkeleton()
+        ) : benefits.length > 0 ? (
+          typeof window !== "undefined" && window.innerWidth > 1023 ? (
+            <Swiper
+              direction="vertical"
+              slidesPerView={benefits.length}
+              spaceBetween={10}
+              allowTouchMove={false}
+              modules={[Navigation]}
+              className={styles.swiper}
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
+            >
+              {benefits.map((benefit, i) => (
+                <SwiperSlide key={benefit.id}>
+                  <button
+                    className={`${styles.card} ${
+                      activeIndex === i ? styles.active : ""
+                    }`}
+                    onClick={() => setActiveIndex(i)}
+                  >
+                    <img
+                      src={benefit.image}
+                      alt={benefit.title}
+                      className={styles.cardImage}
+                    />
+                    <span className={styles.cardTitle}>{benefit.title}</span>
+                  </button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div className={styles.mobileList}>
+              {benefits.map((benefit, i) => (
                 <button
+                  key={benefit.id}
                   className={`${styles.card} ${
                     activeIndex === i ? styles.active : ""
                   }`}
@@ -113,40 +232,21 @@ export default function InvestorBenefits() {
                     alt={benefit.title}
                     className={styles.cardImage}
                   />
-                  <span className={styles.cardTitle}>{benefit.title}</span>
+                  <span
+                    className={styles.cardTitle}
+                    dangerouslySetInnerHTML={{
+                      __html: (() => {
+                        const text = benefit.title;
+                        const mid = Math.ceil(text.length / 2);
+                        return `${text.slice(0, mid)}<br>${text.slice(mid)}`;
+                      })(),
+                    }}
+                  />
                 </button>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        ) : (
-          <div className={styles.mobileList}>
-            {benefits.map((benefit, i) => (
-              <button
-                key={benefit.id}
-                className={`${styles.card} ${
-                  activeIndex === i ? styles.active : ""
-                }`}
-                onClick={() => setActiveIndex(i)}
-              >
-                <img
-                  src={benefit.image}
-                  alt={benefit.title}
-                  className={styles.cardImage}
-                />
-                <span
-                  className={styles.cardTitle}
-                  dangerouslySetInnerHTML={{
-                    __html: (() => {
-                      const text = benefit.title;
-                      const mid = Math.ceil(text.length / 2);
-                      return `${text.slice(0, mid)}<br>${text.slice(mid)}`;
-                    })(),
-                  }}
-                />
-              </button>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )
+        ) : null}
       </div>
     </section>
   );

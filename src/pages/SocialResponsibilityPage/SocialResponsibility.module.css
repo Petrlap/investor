@@ -2,16 +2,168 @@
   display: flex;
   gap: 20px;
 }
-
+.blockImg h1 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 60px;
+  color: #000000;
+}
 .blockImgC {
   align-items: center;
   margin: 100px 0 0 0;
 }
-
 .blockImg > div,
 .blockImg > img {
   width: 50%;
+  object-fit: cover;
 }
-
-.blockImg p {
+.blockImg p,
+.middleBlock p {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+}
+.blockImg span {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  color: #000000;
+}
+.blockImg .logo {
+  margin-top: 50px;
+  width: 135px;
+}
+.middleBlock {
+  margin: 100px 0;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.bottomBlock h2 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 48px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.bottomBlock > div {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 20px;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+}
+.flexRow {
+  display: flex;
+  gap: 60px;
+}
+.flexRow img {
+  width: 25%;
+  object-fit: contain;
+}
+.mob {
+  display: none;
+}
+@media (max-width: 1438px) {
+  .blockImg {
+    margin: 50px 0 80px 0;
+    padding: 0 20px;
+  }
+  .middleBlock {
+    margin: 80px 0;
+    padding: 0 20px;
+  }
+  .bottomBlock > div {
+    padding: 20px;
+  }
+  .bottomBlock {
+    margin: 0 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .bottomBlock {
+    margin: auto;
+  }
+  .desk {
+    display: none;
+  }
+  .mob {
+    display: flex;
+  }
+  .blockImg {
+    flex-direction: column;
+  }
+  .blockImg > div,
+  .blockImg > img {
+    width: 100%;
+  }
+  .blockImg h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+  }
+  .blockImg .mob {
+    height: 465px;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+  .blockImg span {
+    display: block;
+    line-height: 120% !important;
+    margin: 20px 0 10px 0;
+  }
+  .blockImg p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 300;
+  }
+  .blockImg .logo {
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .blockImgRev {
+    flex-direction: column-reverse;
+  }
+  .blockImg > img,
+  .middleBlock > img {
+    height: 465px;
+    border-radius: 24px;
+  }
+  .middleBlock p {
+    font-size: 14px;
+    line-height: 130%;
+  }
+  .bottomBlock h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    background: #fff;
+    padding: 20px 20px 0 20px;
+    margin: 0;
+  }
+  .bottomBlock > div {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 40px;
+  }
+  .flexRow {
+    flex-direction: column-reverse;
+    gap: 30px;
+    margin-bottom: 80px !important;
+  }
+  .flexRow img {
+    width: 80%;
+    margin: 0 auto;
+  }
 }

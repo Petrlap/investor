@@ -4,13 +4,20 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 10, 10, 0.95);
+  background: #fff;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  border-radius: 30px 30px 0 0;
+  z-index: 999;
+}
+.burgerBtn {
+  z-index: 1000;
 }
 .menuModalOpen {
   opacity: 1;
@@ -19,14 +26,14 @@
 .menuContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 25px;
   transform: translateY(-20px);
   animation: slideDown 0.6s ease forwards;
 }
 .menuContent a {
-  color: #fff;
-  font-size: 24px;
+  color: #1a1c1e;
+  font-size: 15px;
   text-decoration: none;
   transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -44,4 +51,33 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+.menuModalLogo {
+  width: 110px;
+  margin-bottom: 30px;
+}
+.menuModal hr {
+  width: 100%;
+  border: 1px solid #e7ebee;
+  margin: 25px 0;
+}
+.menuModal p {
+  font-family: "Gotham Pro", sans-serif;
+  font-size: 14px;
+  line-height: 140%;
+  color: #4f4f6d;
+}
+.modalBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 22px;
+  background: #a8c686;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+  margin-top: 30px;
 }

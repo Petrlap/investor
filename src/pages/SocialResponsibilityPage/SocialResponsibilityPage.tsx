@@ -4,6 +4,7 @@ import img2 from "../../assets/responsibility/img-2.webp";
 import img3 from "../../assets/responsibility/img-3.webp";
 import img4 from "../../assets/responsibility/img-4.webp";
 import styles from "./SocialResponsibility.module.css";
+import { LittleForm } from "../../components/LittleForm/LittleForm";
 
 const SocialResponsibility = () => {
   return (
@@ -12,6 +13,7 @@ const SocialResponsibility = () => {
         <div className={styles.blockImg}>
           <div>
             <h1>Social responsibility</h1>
+            <img className={styles.mob} src={img1} alt="Image 1" />
             <span>
               or a few words about our vision of the role of our business in
               society.
@@ -22,9 +24,9 @@ const SocialResponsibility = () => {
               that business should at least comply with generally accepted norms
               of functioning and interaction with society and the environment.
             </p>
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo" className={styles.logo} />
           </div>
-          <img src={img1} alt="Image 1" />
+          <img className={styles.desk} src={img1} alt="Image 1" />
         </div>
         <div className={`${styles.blockImg} ${styles.blockImgC}`}>
           <img src={img2} alt="Image 2" />
@@ -39,7 +41,9 @@ const SocialResponsibility = () => {
             </p>
           </div>
         </div>
-        <div className={`${styles.blockImg} ${styles.blockImgC}`}>
+        <div
+          className={`${styles.blockImg} ${styles.blockImgC} ${styles.blockImgRev}`}
+        >
           <div>
             <p>
               Unjustifiably thoughtless and consumerist attitude to nature and
@@ -56,9 +60,9 @@ const SocialResponsibility = () => {
           <img src={img3} alt="Image 3" />
         </div>
       </section>
-      <section>
-        <img src={img4} alt="Image 4" />
-        <p>
+      <section className={styles.middleBlock}>
+        <img src={img4} alt="Image 4" className={styles.mb30} />
+        <p className={styles.mb30}>
           <b>
             It is very useful to adopt principles that for centuries have given
             only positive results to individual countries.
@@ -77,7 +81,7 @@ const SocialResponsibility = () => {
           country.
         </p>
       </section>
-      <section>
+      <section className={styles.bottomBlock}>
         <h2>Businesses should be socially responsible towards:</h2>
         <div>
           to society, realizing that the more economically and spiritually
@@ -114,7 +118,7 @@ const SocialResponsibility = () => {
           not require the destruction of trees.<br></br>Our trademark speaks of
           ecological and naturalness and we will try to live up to it.
         </div>
-        <div>
+        <div className={styles.flexRow}>
           <p>
             Yes, we are one small young company that is just starting to build
             its new 100% needed project. But like other large and well-known
@@ -127,21 +131,7 @@ const SocialResponsibility = () => {
           <img src={logo} alt="Logo" />
         </div>
       </section>
-      <section>
-        <div>
-          <p>
-            Присоединяйтесь<br></br>к реальному бизнесу
-          </p>
-          <p>
-            Проект с готовым производством, открытой<br></br>моделью и
-            прозрачной юридической структурой
-          </p>
-        </div>
-        <form>
-          <input />
-          <input />
-        </form>
-      </section>
+      <LittleForm />
     </>
   );
 };
